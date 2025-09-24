@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>O Perfil do Empreendedor do Futuro</title>
+    <meta
+      name="description"
+      content="Site educativo e inspirador sobre o empreendedor do futuro: inovação, tecnologia, impacto social, habilidades e casos de sucesso."
+    />
+    <meta name="author" content="Seu Nome" />
+
+    <!-- Paleta: azul futurista, roxo criativo, verde sustentável -->
+    <style>
+      :root {
+        --bg: #0b1020; /* fundo escuro tecnológico */
+        --panel: #0f1630; /* cartões/barras */
+        --text: #eaf2ff; /* texto principal */
+        --muted: #a7b4d3; /* texto secundário */
+        --blue: #4c8dff; /* azul futurista */
+        --violet: #8b5cf6; /* roxo criativo */
+        --green: #22c55e; /* verde sustentável */
+        --line: rgba(234, 242, 255, 0.12);
+        --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        color: var(--text);
+        background: radial-gradient(
+            800px 400px at 10% -10%,
+            rgba(76, 141, 255, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            700px 350px at 110% 10%,
+            rgba(139, 92, 246, 0.18),
+            transparent 55%
+          ),
+          var(--bg);
+      }
+      a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+      }
+
+      /* Header */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(15, 22, 48, 0.75);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.9rem 0;
+      }
+      .brand {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, var(--blue), var(--violet));
+      }
+      nav ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav a {
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.6rem;
+      }
+      nav a:focus-visible {
+        outline: 2px solid var(--violet);
+        outline-offset: 2px;
+      }
+      .menu-btn {
+        display: none;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 5rem 0 3rem;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5.6vw, 3.5rem);
+        line-height: 1.1;
+        margin: 0 0 1rem;
+      }
+      .subtitle {
+        color: var(--muted);
+        margin: 0 auto 1.2rem;
+        width: min(820px, 95%);
+      }
+      .impact {
+        display: inline-block;
+        margin: 1.2rem 0 2rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, var(--green), var(--blue));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .cta {
+        display: inline-block;
+        background: linear-gradient(90deg, var(--blue), var(--violet));
+        color: #0b1020;
+        font-weight: 800;
+        padding: 0.85rem 1.1rem;
+        border-radius: 0.9rem;
+        box-shadow: var(--shadow);
+      }
+
+      /* Sections */
+      section {
+        padding: 3rem 0;
+      }
+      h2 {
+        font-size: clamp(1.4rem, 3.3vw, 2rem);
+        margin: 0.2rem 0 1rem;
+      }
+      p {
+        margin: 0.4rem 0 1rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+      }
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.2rem;
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        margin: 0.2rem 0 0.6rem;
+      }
+      .kpi {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        font-weight: 700;
+        color: #ddecff;
+      }
+      .kpi .ico {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, var(--green), var(--blue));
+        display: grid;
+        place-items: center;
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, var(--blue), var(--violet));
+      }
+      .tl-item {
+        position: relative;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+      }
+      .tl-item::before {
+        content: "";
+        position: absolute;
+        left: -23px;
+        top: 18px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, var(--green), var(--blue));
+        box-shadow: 0 0 0 3px rgba(76, 141, 255, 0.25);
+      }
+
+      /* Quote */
+      .quote {
+        padding: 1rem 1.2rem;
+        border: 1px dashed var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.02);
+        font-weight: 700;
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        padding: 2rem 0;
+        font-size: 0.95rem;
+      }
+
+      /* Form/Resources */
+      .list-clean {
+        margin: 0.5rem 0 0;
+        padding-left: 1.1rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        nav ul {
+          display: none;
+        }
+        .menu-btn {
+          display: inline-flex;
+          gap: 0.5rem;
+          align-items: center;
+          background: transparent;
+          border: 1px solid var(--line);
+          color: var(--text);
+          padding: 0.4rem 0.6rem;
+          border-radius: 0.6rem;
+        }
+        .open nav ul {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          right: 4%;
+          top: 56px;
+          background: var(--panel);
+          border: 1px solid var(--line);
+          border-radius: 0.8rem;
+          padding: 0.6rem;
+        }
+        .hero {
+          padding-top: 3.8rem;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav" role="navigation" aria-label="principal">
+        <div class="brand" aria-label="Página inicial">
+          <span class="dot"></span> EmpreenderFuturo
+        </div>
+        <button
+          class="menu-btn"
+          aria-expanded="false"
+          aria-controls="menu"
+          id="menu-btn"
+        >
+          ☰ Menu
+        </button>
+        <nav>
+          <ul id="menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#inovacao">Empreendedorismo & Inovação</a></li>
+            <li><a href="#social">Social & Sustentável</a></li>
+            <li><a href="#startups">Startups & Tecnologias</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#cases">Casos</a></li>
+            <li><a href="#final">Conclusão</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <!-- HERO -->
+      <section class="hero container">
+        <h1>O Futuro do Empreendedorismo</h1>
+        <p class="subtitle">
+          Descubra quais habilidades, tendências e inovações moldarão os
+          empreendedores das próximas décadas.
+        </p>
+        <div class="impact">“O futuro pertence a quem cria soluções hoje.”</div>
+        <a class="cta" href="#inovacao" aria-label="Começar agora"
+          >Começar agora</a
+        >
+      </section>
+
+      <!-- BOAS-VINDAS -->
+      <section>
+        <div class="container">
+          <div class="card">
+            <h2>Boas‑vindas</h2>
+            <p>
+              Bem-vindo ao nosso espaço digital! Este site foi criado para
+              explorar, de forma clara e inspiradora, como o empreendedorismo
+              evolui diante de um mundo cada vez mais conectado, tecnológico e
+              consciente. Aqui você vai descobrir quais são as habilidades do
+              <strong>empreendedor do futuro</strong>, conhecer exemplos reais e
+              refletir sobre como negócios podem unir
+              <strong>inovação, propósito e impacto social</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMPREENDEDORISMO E INOVAÇÃO -->
+      <section id="inovacao">
+        <div class="container">
+          <h2>Empreendedorismo e Inovação</h2>
+          <div class="grid cards">
+            <article class="card">
+              <h3>O que é empreender?</h3>
+              <p>
+                Empreender é identificar oportunidades, criar soluções e
+                transformar ideias em negócios que geram valor para a sociedade.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Por que inovar?</h3>
+              <p>
+                A inovação é o motor dos negócios do futuro: cria algo novo ou
+                melhora o que já existe para resolver problemas reais, com
+                impacto e escala.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Exemplos inovadores</h3>
+              <ul class="list-clean">
+                <li>
+                  <strong>Nubank</strong>: serviços bancários 100% digitais e
+                  acessíveis.
+                </li>
+                <li>
+                  <strong>Tesla</strong>: acelera a transição energética com
+                  veículos elétricos.
+                </li>
+                <li>
+                  <strong>iFood</strong>: logística inteligente com apoio de IA.
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div class="card" style="margin-top: 1rem">
+            <div class="kpi">
+              <span class="ico">⚡</span>
+              <span>As 3 características da inovação do futuro</span>
+            </div>
+            <ul class="list-clean">
+              <li>
+                <strong>Velocidade</strong> — adaptar-se rapidamente às
+                mudanças.
+              </li>
+              <li>
+                <strong>Impacto global</strong> — pensar soluções que alcancem
+                milhões.
+              </li>
+              <li>
+                <strong>Sustentabilidade</strong> — crescer sem esgotar
+                recursos.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOCIAL E SUSTENTÁVEL -->
+      <section id="social">
+        <div class="container">
+          <h2>Empreendedorismo Social e Sustentável</h2>
+          <div class="grid cards">
+            <article class="card">
+              <h3>Propósito + Lucro</h3>
+              <p>
+                Negócios do futuro precisam gerar resultado financeiro e impacto
+                positivo nas comunidades e no planeta.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Exemplos</h3>
+              <ul class="list-clean">
+                <li>
+                  <strong>Banco Palmas</strong>: finanças solidárias no Brasil.
+                </li>
+                <li>
+                  <strong>Patagonia</strong>: moda com compromisso ambiental.
+                </li>
+                <li><strong>TETO</strong>: projetos sociais em comunidades.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Frase de destaque</h3>
+              <p class="quote">“Negócios do futuro unem lucro e propósito.”</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- STARTUPS E TECNOLOGIAS -->
+      <section id="startups">
+        <div class="container">
+          <h2>Startups e Novas Tecnologias</h2>
+          <div class="card">
+            <p>
+              <strong>O que é uma startup?</strong> Uma empresa jovem que busca
+              um modelo de negócio escalável, orientada por inovação e
+              tecnologia.
+            </p>
+            <p>
+              <strong>Tecnologias que moldam o futuro:</strong> Inteligência
+              Artificial (IA), Biotecnologia, Metaverso e Economia Criativa.
+            </p>
+            <ul class="list-clean">
+              <li>
+                <strong>OpenAI</strong> — leva IA de ponta a milhões de pessoas.
+              </li>
+              <li>
+                <strong>Gympass</strong> — bem‑estar corporativo em escala
+                global.
+              </li>
+              <li>
+                <strong>99</strong> — soluções de mobilidade urbana conectada.
+              </li>
+            </ul>
+          </div>
+          <div class="timeline">
+            <div class="tl-item">
+              <strong>2000‑2010</strong> — Consolidação da internet e
+              e‑commerce.
+            </div>
+            <div class="tl-item">
+              <strong>2010‑2020</strong> — Mobile first, plataformas e economia
+              sob demanda.
+            </div>
+            <div class="tl-item">
+              <strong>2020‑hoje</strong> — IA generativa, biotecnologia
+              acessível e novos mundos virtuais.
+            </div>
+            <div class="tl-item">
+              <strong>Próximos anos</strong> — Automação criativa, saúde
+              personalizada e cidades inteligentes.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HABILIDADES DO EMPREENDEDOR DO FUTURO -->
+      <section id="habilidades">
+        <div class="container">
+          <h2>Habilidades do Empreendedor do Futuro</h2>
+          <div class="grid cards">
+            <article class="card">
+              <h3>🎨 Criatividade & Pensamento Crítico</h3>
+              <p>
+                Explorar ideias originais, questionar premissas e sintetizar
+                soluções.
+              </p>
+            </article>
+            <article class="card">
+              <h3>🧭 Resiliência & Adaptabilidade</h3>
+              <p>Responder a mudanças e aprender com erros de forma rápida.</p>
+            </article>
+            <article class="card">
+              <h3>🤝 Liderança Colaborativa & Empatia</h3>
+              <p>
+                Conectar pessoas diversas e criar ambientes de alta confiança.
+              </p>
+            </article>
+            <article class="card">
+              <h3>💻 Competência Digital & Fluência Tech</h3>
+              <p>
+                Usar dados, automação e IA para ampliar o impacto do negócio.
+              </p>
+            </article>
+          </div>
+          <p class="quote" style="margin-top: 1rem">
+            “Mais do que CEOs, os líderes do futuro serão solucionadores de
+            problemas globais.”
+          </p>
+        </div>
+      </section>
+
+      <!-- CASOS DE SUCESSO -->
+      <section id="cases">
+        <div class="container">
+          <h2>Casos de Sucesso</h2>
+          <div class="grid cards">
+            <article class="card">
+              <h3>Luiza Trajano — Magazine Luiza</h3>
+              <p>
+                <strong>Bio curta:</strong> Empreendedora brasileira que
+                modernizou o varejo e puxou a transformação digital da empresa.
+              </p>
+              <p>
+                <strong>Contribuição:</strong> Digitalização com foco no
+                consumidor e inclusão.
+              </p>
+              <p><strong>Habilidade-chave:</strong> Liderança empática.</p>
+            </article>
+            <article class="card">
+              <h3>Elon Musk — Tesla • SpaceX</h3>
+              <p>
+                <strong>Bio curta:</strong> Visionário por trás de projetos de
+                energia limpa e exploração espacial.
+              </p>
+              <p>
+                <strong>Contribuição:</strong> Disrupção em mobilidade, energia
+                e acesso ao espaço.
+              </p>
+              <p><strong>Habilidade-chave:</strong> Visão disruptiva.</p>
+            </article>
+            <article class="card">
+              <h3>Guilherme Benchimol — XP Investimentos</h3>
+              <p>
+                <strong>Bio curta:</strong> Fundador da XP, revolucionou o
+                mercado financeiro brasileiro.
+              </p>
+              <p>
+                <strong>Contribuição:</strong> Democratização de investimentos e
+                educação financeira.
+              </p>
+              <p>
+                <strong>Habilidade-chave:</strong> Inovação no acesso à
+                informação.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONCLUSÃO / INSPIRAÇÃO FINAL -->
+      <section id="final">
+        <div class="container">
+          <h2>Conclusão & Inspiração</h2>
+          <p>
+            <strong>Mensagem final:</strong> O empreendedor do futuro será
+            aquele capaz de unir propósito, inovação e impacto social para
+            transformar o mundo.
+          </p>
+          <div class="grid cards">
+            <article class="card">
+              <h3>Steve Jobs</h3>
+              <p>“A inovação distingue um líder de um seguidor.”</p>
+            </article>
+            <article class="card">
+              <h3>Luiza Trajano</h3>
+              <p>“Gente é o ativo mais importante de uma empresa.”</p>
+            </article>
+            <article class="card">
+              <h3>Muhammad Yunus</h3>
+              <p>“Negócios sociais são a chave para um mundo sem pobreza.”</p>
+            </article>
+          </div>
+          <div class="card" style="margin-top: 1rem">
+            <h3>Leituras recomendadas</h3>
+            <ul class="list-clean">
+              <li><em>Empreendedorismo Inovador</em> — José Dornelas.</li>
+              <li>
+                TED Talk: <em>How Great Leaders Inspire Action</em> — Simon
+                Sinek.
+              </li>
+              <li>
+                Relatórios do <em>World Economic Forum</em> sobre futuro do
+                trabalho e empreendedorismo.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          © <span id="ano"></span> EmpreenderFuturo — Site acadêmico para a
+          disciplina de Empreendedorismo.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Ano automático
+      document.getElementById("ano").textContent = new Date().getFullYear();
+      // Menu mobile
+      const btn = document.getElementById("menu-btn");
+      btn?.addEventListener("click", () => {
+        document.body.classList.toggle("open");
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
+  </body>
+</html>
