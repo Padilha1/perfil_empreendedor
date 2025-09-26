@@ -1,639 +1,257 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>O Perfil do Empreendedor do Futuro</title>
-    <meta
-      name="description"
-      content="Site educativo e inspirador sobre o empreendedor do futuro: inovação, tecnologia, impacto social, habilidades e casos de sucesso."
-    />
-    <meta name="author" content="Seu Nome" />
-
-    <!-- Paleta: azul futurista, roxo criativo, verde sustentável -->
-    <style>
-      :root {
-        --bg: #0b1020; /* fundo escuro tecnológico */
-        --panel: #0f1630; /* cartões/barras */
-        --text: #eaf2ff; /* texto principal */
-        --muted: #a7b4d3; /* texto secundário */
-        --blue: #4c8dff; /* azul futurista */
-        --violet: #8b5cf6; /* roxo criativo */
-        --green: #22c55e; /* verde sustentável */
-        --line: rgba(234, 242, 255, 0.12);
-        --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-        --radius: 18px;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        margin: 0;
-        font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-          Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-        color: var(--text);
-        background: radial-gradient(
-            800px 400px at 10% -10%,
-            rgba(76, 141, 255, 0.18),
-            transparent 60%
-          ),
-          radial-gradient(
-            700px 350px at 110% 10%,
-            rgba(139, 92, 246, 0.18),
-            transparent 55%
-          ),
-          var(--bg);
-      }
-      a {
-        color: var(--blue);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .container {
-        width: min(1100px, 92%);
-        margin: 0 auto;
-      }
-
-      /* Header */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: rgba(15, 22, 48, 0.75);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--line);
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.9rem 0;
-      }
-      .brand {
-        display: flex;
-        gap: 0.6rem;
-        align-items: center;
-        font-weight: 800;
-        letter-spacing: 0.3px;
-      }
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: linear-gradient(90deg, var(--blue), var(--violet));
-      }
-      nav ul {
-        display: flex;
-        gap: 1rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      nav a {
-        padding: 0.4rem 0.6rem;
-        border-radius: 0.6rem;
-      }
-      nav a:focus-visible {
-        outline: 2px solid var(--violet);
-        outline-offset: 2px;
-      }
-      .menu-btn {
-        display: none;
-      }
-
-      /* Hero */
-      .hero {
-        padding: 5rem 0 3rem;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: clamp(2rem, 5.6vw, 3.5rem);
-        line-height: 1.1;
-        margin: 0 0 1rem;
-      }
-      .subtitle {
-        color: var(--muted);
-        margin: 0 auto 1.2rem;
-        width: min(820px, 95%);
-      }
-      .impact {
-        display: inline-block;
-        margin: 1.2rem 0 2rem;
-        font-weight: 800;
-        background: linear-gradient(90deg, var(--green), var(--blue));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .cta {
-        display: inline-block;
-        background: linear-gradient(90deg, var(--blue), var(--violet));
-        color: #0b1020;
-        font-weight: 800;
-        padding: 0.85rem 1.1rem;
-        border-radius: 0.9rem;
-        box-shadow: var(--shadow);
-      }
-
-      /* Sections */
-      section {
-        padding: 3rem 0;
-      }
-      h2 {
-        font-size: clamp(1.4rem, 3.3vw, 2rem);
-        margin: 0.2rem 0 1rem;
-      }
-      p {
-        margin: 0.4rem 0 1rem;
-      }
-      .grid {
-        display: grid;
-        gap: 1rem;
-      }
-      .cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .card {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.03),
-          rgba(255, 255, 255, 0.01)
-        );
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 1.2rem;
-        box-shadow: var(--shadow);
-      }
-      .card h3 {
-        margin: 0.2rem 0 0.6rem;
-      }
-      .kpi {
-        display: flex;
-        gap: 0.6rem;
-        align-items: center;
-        font-weight: 700;
-        color: #ddecff;
-      }
-      .kpi .ico {
-        width: 28px;
-        height: 28px;
-        border-radius: 8px;
-        background: linear-gradient(90deg, var(--green), var(--blue));
-        display: grid;
-        place-items: center;
-      }
-
-      /* Timeline */
-      .timeline {
-        position: relative;
-        margin: 1.5rem 0;
-        padding-left: 1rem;
-      }
-      .timeline::before {
-        content: "";
-        position: absolute;
-        left: 12px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(180deg, var(--blue), var(--violet));
-      }
-      .tl-item {
-        position: relative;
-        margin-left: 1.5rem;
-        margin-bottom: 1rem;
-        padding: 1rem;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-      }
-      .tl-item::before {
-        content: "";
-        position: absolute;
-        left: -23px;
-        top: 18px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: linear-gradient(90deg, var(--green), var(--blue));
-        box-shadow: 0 0 0 3px rgba(76, 141, 255, 0.25);
-      }
-
-      /* Quote */
-      .quote {
-        padding: 1rem 1.2rem;
-        border: 1px dashed var(--line);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.02);
-        font-weight: 700;
-      }
-
-      /* Footer */
-      footer {
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        padding: 2rem 0;
-        font-size: 0.95rem;
-      }
-
-      /* Form/Resources */
-      .list-clean {
-        margin: 0.5rem 0 0;
-        padding-left: 1.1rem;
-      }
-
-      /* Responsive */
-      @media (max-width: 900px) {
-        .cards {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 600px) {
-        nav ul {
-          display: none;
-        }
-        .menu-btn {
-          display: inline-flex;
-          gap: 0.5rem;
-          align-items: center;
-          background: transparent;
-          border: 1px solid var(--line);
-          color: var(--text);
-          padding: 0.4rem 0.6rem;
-          border-radius: 0.6rem;
-        }
-        .open nav ul {
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          right: 4%;
-          top: 56px;
-          background: var(--panel);
-          border: 1px solid var(--line);
-          border-radius: 0.8rem;
-          padding: 0.6rem;
-        }
-        .hero {
-          padding-top: 3.8rem;
-        }
-        .cards {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container nav" role="navigation" aria-label="principal">
-        <div class="brand" aria-label="Página inicial">
-          <span class="dot"></span> EmpreenderFuturo
-        </div>
-        <button
-          class="menu-btn"
-          aria-expanded="false"
-          aria-controls="menu"
-          id="menu-btn"
-        >
-          ☰ Menu
-        </button>
-        <nav>
-          <ul id="menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#inovacao">Empreendedorismo & Inovação</a></li>
-            <li><a href="#social">Social & Sustentável</a></li>
-            <li><a href="#startups">Startups & Tecnologias</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#cases">Casos</a></li>
-            <li><a href="#final">Conclusão</a></li>
-          </ul>
-        </nav>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio Inovador</title>
+  <meta name="description" content="Site educativo sobre empreendedorismo, inovação e impacto social." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🚀</span>
+        <span class="brand-name">Portfólio Inovador</span>
       </div>
-    </header>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menuList">☰</button>
+        <ul id="menuList" class="menu-list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#historia">História</a></li>
+          <li><a href="#social">Empreendedorismo Social</a></li>
+          <li><a href="#startups">Startups</a></li>
+          <li><a href="#conceitos">Conceitos & Tendências</a></li>
+          <li><a href="#az">A a Z</a></li>
+          <li><a href="#recomendo">Eu Recomendo</a></li>
+          <li><a href="#conclusao">Conclusão</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main id="inicio">
-      <!-- HERO -->
-      <section class="hero container">
-        <h1>O Futuro do Empreendedorismo</h1>
-        <p class="subtitle">
-          Descubra quais habilidades, tendências e inovações moldarão os
-          empreendedores das próximas décadas.
-        </p>
-        <div class="impact">“O futuro pertence a quem cria soluções hoje.”</div>
+  <main>
+    <!-- Início -->
+    <section id="inicio" class="section hero">
+      <div class="container grid-2">
         <div>
-          <a class="cta" href="#inovacao" aria-label="Começar agora"
-            >Começar agora</a
-          >
-        </div>
-      </section>
-
-      <!-- BOAS-VINDAS -->
-      <section>
-        <div class="container">
-          <div class="card">
-            <h2>Boas‑vindas</h2>
-            <p>
-              Bem-vindo ao nosso espaço digital! Este site foi criado para
-              explorar, de forma clara e inspiradora, como o empreendedorismo
-              evolui diante de um mundo cada vez mais conectado, tecnológico e
-              consciente. Aqui você vai descobrir quais são as habilidades do
-              <strong>empreendedor do futuro</strong>, conhecer exemplos reais e
-              refletir sobre como negócios podem unir
-              <strong>inovação, propósito e impacto social</strong>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- EMPREENDEDORISMO E INOVAÇÃO -->
-      <section id="inovacao">
-        <div class="container">
-          <h2>Empreendedorismo e Inovação</h2>
-          <div class="grid cards">
-            <article class="card">
-              <h3>O que é empreender?</h3>
-              <p>
-                Empreender é identificar oportunidades, criar soluções e
-                transformar ideias em negócios que geram valor para a sociedade.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Por que inovar?</h3>
-              <p>
-                A inovação é o motor dos negócios do futuro: cria algo novo ou
-                melhora o que já existe para resolver problemas reais, com
-                impacto e escala.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Exemplos inovadores</h3>
-              <ul class="list-clean">
-                <li>
-                  <strong>Nubank</strong>: serviços bancários 100% digitais e
-                  acessíveis.
-                </li>
-                <li>
-                  <strong>Tesla</strong>: acelera a transição energética com
-                  veículos elétricos.
-                </li>
-                <li>
-                  <strong>iFood</strong>: logística inteligente com apoio de IA.
-                </li>
-              </ul>
-            </article>
-          </div>
-          <div class="card" style="margin-top: 1rem">
-            <div class="kpi">
-              <span class="ico">⚡</span>
-              <span>As 3 características da inovação do futuro</span>
-            </div>
-            <ul class="list-clean">
-              <li>
-                <strong>Velocidade</strong> — adaptar-se rapidamente às
-                mudanças.
-              </li>
-              <li>
-                <strong>Impacto global</strong> — pensar soluções que alcancem
-                milhões.
-              </li>
-              <li>
-                <strong>Sustentabilidade</strong> — crescer sem esgotar
-                recursos.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- SOCIAL E SUSTENTÁVEL -->
-      <section id="social">
-        <div class="container">
-          <h2>Empreendedorismo Social e Sustentável</h2>
-          <div class="grid cards">
-            <article class="card">
-              <h3>Propósito + Lucro</h3>
-              <p>
-                Negócios do futuro precisam gerar resultado financeiro e impacto
-                positivo nas comunidades e no planeta.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Exemplos</h3>
-              <ul class="list-clean">
-                <li>
-                  <strong>Banco Palmas</strong>: finanças solidárias no Brasil.
-                </li>
-                <li>
-                  <strong>Patagonia</strong>: moda com compromisso ambiental.
-                </li>
-                <li><strong>TETO</strong>: projetos sociais em comunidades.</li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Frase de destaque</h3>
-              <p class="quote">“Negócios do futuro unem lucro e propósito.”</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- STARTUPS E TECNOLOGIAS -->
-      <section id="startups">
-        <div class="container">
-          <h2>Startups e Novas Tecnologias</h2>
-          <div class="card">
-            <p>
-              <strong>O que é uma startup?</strong> Uma empresa jovem que busca
-              um modelo de negócio escalável, orientada por inovação e
-              tecnologia.
-            </p>
-            <p>
-              <strong>Tecnologias que moldam o futuro:</strong> Inteligência
-              Artificial (IA), Biotecnologia, Metaverso e Economia Criativa.
-            </p>
-            <ul class="list-clean">
-              <li>
-                <strong>OpenAI</strong> — leva IA de ponta a milhões de pessoas.
-              </li>
-              <li>
-                <strong>Gympass</strong> — bem‑estar corporativo em escala
-                global.
-              </li>
-              <li>
-                <strong>99</strong> — soluções de mobilidade urbana conectada.
-              </li>
-            </ul>
-          </div>
-          <div class="timeline">
-            <div class="tl-item">
-              <strong>2000‑2010</strong> — Consolidação da internet e
-              e‑commerce.
-            </div>
-            <div class="tl-item">
-              <strong>2010‑2020</strong> — Mobile first, plataformas e economia
-              sob demanda.
-            </div>
-            <div class="tl-item">
-              <strong>2020‑hoje</strong> — IA generativa, biotecnologia
-              acessível e novos mundos virtuais.
-            </div>
-            <div class="tl-item">
-              <strong>Próximos anos</strong> — Automação criativa, saúde
-              personalizada e cidades inteligentes.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HABILIDADES DO EMPREENDEDOR DO FUTURO -->
-      <section id="habilidades">
-        <div class="container">
-          <h2>Habilidades do Empreendedor do Futuro</h2>
-          <div class="grid cards">
-            <article class="card">
-              <h3>🎨 Criatividade & Pensamento Crítico</h3>
-              <p>
-                Explorar ideias originais, questionar premissas e sintetizar
-                soluções.
-              </p>
-            </article>
-            <article class="card">
-              <h3>🧭 Resiliência & Adaptabilidade</h3>
-              <p>Responder a mudanças e aprender com erros de forma rápida.</p>
-            </article>
-            <article class="card">
-              <h3>🤝 Liderança Colaborativa & Empatia</h3>
-              <p>
-                Conectar pessoas diversas e criar ambientes de alta confiança.
-              </p>
-            </article>
-            <article class="card">
-              <h3>💻 Competência Digital & Fluência Tech</h3>
-              <p>
-                Usar dados, automação e IA para ampliar o impacto do negócio.
-              </p>
-            </article>
-          </div>
-          <p class="quote" style="margin-top: 1rem">
-            “Mais do que CEOs, os líderes do futuro serão solucionadores de
-            problemas globais.”
+          <h1>Bem-vindo ao <span class="grad">Portfólio Inovador</span>!</h1>
+          <p class="lead">
+            O empreendedorismo é muito mais do que abrir uma empresa. É sobre identificar problemas, transformar ideias em soluções e criar impacto positivo na sociedade.
+            No Brasil, um país marcado pela criatividade e pela resiliência, empreender é também uma forma de superar desafios e gerar novas oportunidades.
           </p>
-        </div>
-      </section>
-
-      <!-- CASOS DE SUCESSO -->
-      <section id="cases">
-        <div class="container">
-          <h2>Casos de Sucesso</h2>
-          <div class="grid cards">
-            <article class="card">
-              <h3>Luiza Trajano — Magazine Luiza</h3>
-              <p>
-                <strong>Bio curta:</strong> Empreendedora brasileira que
-                modernizou o varejo e puxou a transformação digital da empresa.
-              </p>
-              <p>
-                <strong>Contribuição:</strong> Digitalização com foco no
-                consumidor e inclusão.
-              </p>
-              <p><strong>Habilidade-chave:</strong> Liderança empática.</p>
-            </article>
-            <article class="card">
-              <h3>Elon Musk — Tesla • SpaceX</h3>
-              <p>
-                <strong>Bio curta:</strong> Visionário por trás de projetos de
-                energia limpa e exploração espacial.
-              </p>
-              <p>
-                <strong>Contribuição:</strong> Disrupção em mobilidade, energia
-                e acesso ao espaço.
-              </p>
-              <p><strong>Habilidade-chave:</strong> Visão disruptiva.</p>
-            </article>
-            <article class="card">
-              <h3>Guilherme Benchimol — XP Investimentos</h3>
-              <p>
-                <strong>Bio curta:</strong> Fundador da XP, revolucionou o
-                mercado financeiro brasileiro.
-              </p>
-              <p>
-                <strong>Contribuição:</strong> Democratização de investimentos e
-                educação financeira.
-              </p>
-              <p>
-                <strong>Habilidade-chave:</strong> Inovação no acesso à
-                informação.
-              </p>
-            </article>
+          <p>Este site reúne conceitos, histórias inspiradoras, tendências e reflexões sobre inovação e empreendedorismo — com o objetivo de mostrar como cada iniciativa pode transformar o futuro.</p>
+          <blockquote class="impacto">“Empreender é acreditar no impossível e transformá-lo em realidade.”</blockquote>
+          <div class="cta-row">
+            <a class="btn primary" href="#historia">Começar</a>
+            <a class="btn ghost" href="#recomendo">Recomendações</a>
           </div>
         </div>
-      </section>
-
-      <!-- CONCLUSÃO / INSPIRAÇÃO FINAL -->
-      <section id="final">
-        <div class="container">
-          <h2>Conclusão & Inspiração</h2>
-          <p>
-            <strong>Mensagem final:</strong> O empreendedor do futuro será
-            aquele capaz de unir propósito, inovação e impacto social para
-            transformar o mundo.
-          </p>
-          <div class="grid cards">
-            <article class="card">
-              <h3>Steve Jobs</h3>
-              <p>“A inovação distingue um líder de um seguidor.”</p>
-            </article>
-            <article class="card">
-              <h3>Luiza Trajano</h3>
-              <p>“Gente é o ativo mais importante de uma empresa.”</p>
-            </article>
-            <article class="card">
-              <h3>Muhammad Yunus</h3>
-              <p>“Negócios sociais são a chave para um mundo sem pobreza.”</p>
-            </article>
-          </div>
-          <div class="card" style="margin-top: 1rem">
-            <h3>Leituras recomendadas</h3>
-            <ul class="list-clean">
-              <li><em>Empreendedorismo Inovador</em> — José Dornelas.</li>
-              <li>
-                TED Talk: <em>How Great Leaders Inspire Action</em> — Simon
-                Sinek.
-              </li>
-              <li>
-                Relatórios do <em>World Economic Forum</em> sobre futuro do
-                trabalho e empreendedorismo.
-              </li>
-            </ul>
-          </div>
+        <div class="card highlight">
+          <h3>Mapa do Site</h3>
+          <ul class="checklist">
+            <li>👤 História de (intra)empreendedor</li>
+            <li>🤝 Empreendedorismo Social</li>
+            <li>🚀 Startups e cases</li>
+            <li>🌍 Conceitos & Tendências</li>
+            <li>🎬 A a Z (Filme & Livro)</li>
+            <li>📚 Eu Recomendo</li>
+            <li>✨ Conclusão</li>
+          </ul>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <p>
-          © <span id="ano"></span> EmpreenderFuturo — Site acadêmico para a
-          disciplina de Empreendedorismo.
-        </p>
       </div>
-    </footer>
+    </section>
 
-    <script>
-      // Ano automático
-      document.getElementById("ano").textContent = new Date().getFullYear();
-      // Menu mobile
-      const btn = document.getElementById("menu-btn");
-      btn?.addEventListener("click", () => {
-        document.body.classList.toggle("open");
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-      });
-    </script>
-  </body>
+    <!-- História -->
+    <section id="historia" class="section">
+      <div class="container">
+        <h2>👤 História de um Empreendedor ou Intraempreendedor</h2>
+        <p>
+          O <strong>intraempreendedorismo</strong> é a capacidade de inovar dentro de uma organização já existente. Em vez de abrir seu próprio negócio, o intraempreendedor transforma processos, cria novos produtos e revoluciona mercados de dentro para fora. No Brasil, esse movimento tem crescido, principalmente em grandes empresas que incentivam times a pensarem como startups.
+        </p>
+
+        <article class="card">
+          <header class="card-head">
+            <div class="avatar">LT</div>
+            <div>
+              <h3>Exemplo: Luiza Trajano – Magazine Luiza</h3>
+              <p class="muted">Transformação digital e visão de futuro</p>
+            </div>
+          </header>
+          <div class="card-body grid-2">
+            <ul class="bullets">
+              <li><strong>Desafios:</strong> enfrentar a concorrência de grandes players globais e transformar uma rede de lojas físicas em potência digital.</li>
+              <li><strong>Regras quebradas:</strong> apostar na digitalização quando poucos acreditavam no varejo online.</li>
+              <li><strong>Mercado identificado:</strong> consumidores em cidades médias e pequenas com pouco acesso ao e-commerce.</li>
+              <li><strong>Proposta de valor:</strong> democratizar o acesso ao varejo digital.</li>
+              <li><strong>Legado:</strong> o Magalu tornou-se referência em transformação digital no Brasil.</li>
+            </ul>
+            <div class="note">
+              <p><strong>Insight:</strong> intraempreender é combinar cultura de inovação, tecnologia e foco no cliente — mesmo dentro de estruturas complexas.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Empreendedorismo Social -->
+    <section id="social" class="section alt">
+      <div class="container">
+        <h2>🤝 Empreendedorismo Social</h2>
+        <p>O empreendedorismo social une lucro e impacto positivo. É quando o foco não é apenas financeiro, mas também resolver problemas da sociedade.</p>
+
+        <div class="cards grid-2">
+          <article class="card">
+            <h3>Gerando Falcões (Edu Lyra)</h3>
+            <p>Atua em comunidades com educação, cultura e inclusão produtiva, acelerando a mobilidade social.</p>
+          </article>
+
+          <article class="card">
+            <h3>Banco Pérola</h3>
+            <p>Oferece microcrédito para jovens empreendedores de baixa renda, fomentando negócios locais.</p>
+          </article>
+        </div>
+
+        <article class="card focus">
+          <header class="card-head">
+            <div class="avatar">TB</div>
+            <div>
+              <h3>Startup escolhida: TETO Brasil</h3>
+              <p class="muted">Moradia digna em comunidades vulneráveis</p>
+            </div>
+          </header>
+          <div class="card-body">
+            <ul class="bullets">
+              <li><strong>Problema:</strong> falta de moradia digna.</li>
+              <li><strong>Impacto:</strong> milhares de casas emergenciais construídas com voluntários e moradores.</li>
+              <li><strong>Por que o chapéu sai:</strong> conecta juventude, cidadania e transformação social de forma prática e mensurável.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Startups -->
+    <section id="startups" class="section">
+      <div class="container">
+        <h2>🚀 Startups</h2>
+        <p>Startups são empresas inovadoras, escaláveis e de crescimento acelerado, criadas para resolver problemas específicos de forma disruptiva.</p>
+
+        <div class="cards grid-3">
+          <article class="card">
+            <h3>Nubank</h3>
+            <p>Revolucionou o setor bancário com serviços digitais e experiência centrada no usuário.</p>
+          </article>
+          <article class="card">
+            <h3>iFood</h3>
+            <p>Transformou a forma de pedir comida, abrindo oportunidades e gerando renda.</p>
+          </article>
+          <article class="card">
+            <h3>Gympass</h3>
+            <p>Acesso flexível a academias e atividades físicas em rede global.</p>
+          </article>
+        </div>
+
+        <div class="cards grid-2">
+          <article class="card">
+            <h4>Startups sociais</h4>
+            <ul class="bullets">
+              <li><strong>Miaw:</strong> conecta ONGs de adoção de animais a interessados.</li>
+              <li><strong>Geekie:</strong> soluções educacionais digitais para escolas públicas.</li>
+            </ul>
+          </article>
+          <article class="card note">
+            <p><strong>Dica:</strong> comece pequeno, valide rápido e aprenda sempre com o usuário.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conceitos & Tendências -->
+    <section id="conceitos" class="section alt">
+      <div class="container">
+        <h2>🌍 Conceitos & Tendências</h2>
+        <div class="timeline">
+          <div class="t-item">
+            <h3>1. Inteligência Artificial</h3>
+            <p>Ferramenta que aprende padrões e ajuda empresas a tomarem decisões rápidas, personalizar produtos e otimizar custos. <em>Exemplo:</em> IA no setor de saúde para diagnósticos precoces.</p>
+          </div>
+          <div class="t-item">
+            <h3>2. Economia Criativa</h3>
+            <p>Arte, cultura, design, música e audiovisual como motores de inovação. <em>Exemplo:</em> plataformas digitais transformaram como consumimos música e filmes.</p>
+          </div>
+          <div class="t-item">
+            <h3>3. Design Thinking</h3>
+            <p>Metodologia centrada no usuário com empatia, prototipagem e testes rápidos. <em>Exemplo:</em> apps mais intuitivos a partir de pesquisa com usuários.</p>
+          </div>
+          <div class="t-item">
+            <h3>4. ESG – Negócios Sustentáveis</h3>
+            <p>Impacto ambiental, social e governança responsável. <em>Exemplo:</em> empresas brasileiras referência em sustentabilidade.</p>
+          </div>
+          <div class="t-item">
+            <h3>5. Economia Compartilhada</h3>
+            <p>Pessoas compartilham bens e serviços em vez de comprar. <em>Exemplo:</em> plataformas de hospedagem e mobilidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A a Z -->
+    <section id="az" class="section">
+      <div class="container">
+        <h2>🎬 Empreendedorismo de A a Z</h2>
+        <div class="cards grid-2">
+          <article class="card">
+            <h3>Filme: <em>Fome de Poder</em></h3>
+            <p>Mostra a história do McDonald’s e o papel de Ray Kroc na escalabilidade do negócio.</p>
+            <p class="muted"><strong>Aprendizado:</strong> visão estratégica e escalabilidade.</p>
+          </article>
+          <article class="card">
+            <h3>Leitura: <em>Sonho Grande</em></h3>
+            <p>Trajetória de Lemann, Telles e Sicupira e a construção de um império empresarial.</p>
+            <p class="muted"><strong>Aprendizado:</strong> disciplina, meritocracia e ousadia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eu Recomendo -->
+    <section id="recomendo" class="section alt">
+      <div class="container">
+        <h2>📚 Eu Recomendo</h2>
+        <ul class="resource-list">
+          <li><strong>Blog Startupi</strong> — atualizações sobre startups e inovação no Brasil.</li>
+          <li><strong>Canal G4 Educação (YouTube)</strong> — conteúdo prático de negócios.</li>
+          <li><strong>Livro “O Dilema da Inovação” (Clayton Christensen)</strong> — por que grandes empresas falham ao não se reinventarem.</li>
+        </ul>
+        <div class="tip card">
+          <p><strong>Tip:</strong> crie um hábito de curadoria semanal — salve artigos, anote ideias e compartilhe aprendizados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusão -->
+    <section id="conclusao" class="section">
+      <div class="container">
+        <h2>✨ Conclusão / Reflexão Final</h2>
+        <p>
+          Construir este portfólio mostrou que empreender é muito mais do que abrir uma empresa: é sobre coragem, resiliência e impacto. Vivemos em um país cheio de desafios, mas também repleto de oportunidades. Cabe aos empreendedores — sociais, digitais ou intraempreendedores — enxergar soluções onde muitos só veem problemas.
+        </p>
+        <blockquote class="impacto">“O futuro pertence a quem ousa inovar.”</blockquote>
+        <a class="btn primary" href="#inicio" aria-label="Voltar ao topo">Voltar ao topo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Feito com ❤ para estudos de empreendedorismo • <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
 </html>
