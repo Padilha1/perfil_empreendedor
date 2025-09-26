@@ -1,257 +1,397 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio Inovador</title>
-  <meta name="description" content="Site educativo sobre empreendedorismo, inovação e impacto social." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <div class="brand">
-        <span class="logo" aria-hidden="true">🚀</span>
-        <span class="brand-name">Portfólio Inovador</span>
-      </div>
-      <nav class="site-nav" aria-label="Navegação principal">
-        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menuList">☰</button>
-        <ul id="menuList" class="menu-list">
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#historia">História</a></li>
-          <li><a href="#social">Empreendedorismo Social</a></li>
-          <li><a href="#startups">Startups</a></li>
-          <li><a href="#conceitos">Conceitos & Tendências</a></li>
-          <li><a href="#az">A a Z</a></li>
-          <li><a href="#recomendo">Eu Recomendo</a></li>
-          <li><a href="#conclusao">Conclusão</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Início -->
-    <section id="inicio" class="section hero">
-      <div class="container grid-2">
-        <div>
-          <h1>Bem-vindo ao <span class="grad">Portfólio Inovador</span>!</h1>
-          <p class="lead">
-            O empreendedorismo é muito mais do que abrir uma empresa. É sobre identificar problemas, transformar ideias em soluções e criar impacto positivo na sociedade.
-            No Brasil, um país marcado pela criatividade e pela resiliência, empreender é também uma forma de superar desafios e gerar novas oportunidades.
-          </p>
-          <p>Este site reúne conceitos, histórias inspiradoras, tendências e reflexões sobre inovação e empreendedorismo — com o objetivo de mostrar como cada iniciativa pode transformar o futuro.</p>
-          <blockquote class="impacto">“Empreender é acreditar no impossível e transformá-lo em realidade.”</blockquote>
-          <div class="cta-row">
-            <a class="btn primary" href="#historia">Começar</a>
-            <a class="btn ghost" href="#recomendo">Recomendações</a>
-          </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio Inovador</title>
+    <meta
+      name="description"
+      content="Site educativo sobre empreendedorismo, inovação e impacto social."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🚀</span>
+          <span class="brand-name">Portfólio Inovador</span>
         </div>
-        <div class="card highlight">
-          <h3>Mapa do Site</h3>
-          <ul class="checklist">
-            <li>👤 História de (intra)empreendedor</li>
-            <li>🤝 Empreendedorismo Social</li>
-            <li>🚀 Startups e cases</li>
-            <li>🌍 Conceitos & Tendências</li>
-            <li>🎬 A a Z (Filme & Livro)</li>
-            <li>📚 Eu Recomendo</li>
-            <li>✨ Conclusão</li>
+        <nav class="site-nav" aria-label="Navegação principal">
+          <button
+            id="menuToggle"
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="menuList"
+          >
+            ☰
+          </button>
+          <ul id="menuList" class="menu-list">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#historia">História</a></li>
+            <li><a href="#social">Empreendedorismo Social</a></li>
+            <li><a href="#startups">Startups</a></li>
+            <li><a href="#conceitos">Conceitos & Tendências</a></li>
+            <li><a href="#az">A a Z</a></li>
+            <li><a href="#recomendo">Eu Recomendo</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
           </ul>
-        </div>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <!-- História -->
-    <section id="historia" class="section">
-      <div class="container">
-        <h2>👤 História de um Empreendedor ou Intraempreendedor</h2>
-        <p>
-          O <strong>intraempreendedorismo</strong> é a capacidade de inovar dentro de uma organização já existente. Em vez de abrir seu próprio negócio, o intraempreendedor transforma processos, cria novos produtos e revoluciona mercados de dentro para fora. No Brasil, esse movimento tem crescido, principalmente em grandes empresas que incentivam times a pensarem como startups.
-        </p>
-
-        <article class="card">
-          <header class="card-head">
-            <div class="avatar">LT</div>
-            <div>
-              <h3>Exemplo: Luiza Trajano – Magazine Luiza</h3>
-              <p class="muted">Transformação digital e visão de futuro</p>
-            </div>
-          </header>
-          <div class="card-body grid-2">
-            <ul class="bullets">
-              <li><strong>Desafios:</strong> enfrentar a concorrência de grandes players globais e transformar uma rede de lojas físicas em potência digital.</li>
-              <li><strong>Regras quebradas:</strong> apostar na digitalização quando poucos acreditavam no varejo online.</li>
-              <li><strong>Mercado identificado:</strong> consumidores em cidades médias e pequenas com pouco acesso ao e-commerce.</li>
-              <li><strong>Proposta de valor:</strong> democratizar o acesso ao varejo digital.</li>
-              <li><strong>Legado:</strong> o Magalu tornou-se referência em transformação digital no Brasil.</li>
-            </ul>
-            <div class="note">
-              <p><strong>Insight:</strong> intraempreender é combinar cultura de inovação, tecnologia e foco no cliente — mesmo dentro de estruturas complexas.</p>
+    <main>
+      <!-- Início -->
+      <section id="inicio" class="section hero">
+        <div class="container grid-2">
+          <div>
+            <h1>Bem-vindo ao <span class="grad">Portfólio Inovador</span>!</h1>
+            <p class="lead">
+              O empreendedorismo é muito mais do que abrir uma empresa. É sobre
+              identificar problemas, transformar ideias em soluções e criar
+              impacto positivo na sociedade. No Brasil, um país marcado pela
+              criatividade e pela resiliência, empreender é também uma forma de
+              superar desafios e gerar novas oportunidades.
+            </p>
+            <p>
+              Este site reúne conceitos, histórias inspiradoras, tendências e
+              reflexões sobre inovação e empreendedorismo — com o objetivo de
+              mostrar como cada iniciativa pode transformar o futuro.
+            </p>
+            <blockquote class="impacto">
+              “Empreender é acreditar no impossível e transformá-lo em
+              realidade.”
+            </blockquote>
+            <div class="cta-row">
+              <a class="btn primary" href="#historia">Começar</a>
+              <a class="btn ghost" href="#recomendo">Recomendações</a>
             </div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Empreendedorismo Social -->
-    <section id="social" class="section alt">
-      <div class="container">
-        <h2>🤝 Empreendedorismo Social</h2>
-        <p>O empreendedorismo social une lucro e impacto positivo. É quando o foco não é apenas financeiro, mas também resolver problemas da sociedade.</p>
-
-        <div class="cards grid-2">
-          <article class="card">
-            <h3>Gerando Falcões (Edu Lyra)</h3>
-            <p>Atua em comunidades com educação, cultura e inclusão produtiva, acelerando a mobilidade social.</p>
-          </article>
-
-          <article class="card">
-            <h3>Banco Pérola</h3>
-            <p>Oferece microcrédito para jovens empreendedores de baixa renda, fomentando negócios locais.</p>
-          </article>
-        </div>
-
-        <article class="card focus">
-          <header class="card-head">
-            <div class="avatar">TB</div>
-            <div>
-              <h3>Startup escolhida: TETO Brasil</h3>
-              <p class="muted">Moradia digna em comunidades vulneráveis</p>
-            </div>
-          </header>
-          <div class="card-body">
-            <ul class="bullets">
-              <li><strong>Problema:</strong> falta de moradia digna.</li>
-              <li><strong>Impacto:</strong> milhares de casas emergenciais construídas com voluntários e moradores.</li>
-              <li><strong>Por que o chapéu sai:</strong> conecta juventude, cidadania e transformação social de forma prática e mensurável.</li>
+          <div class="card highlight">
+            <h3>Mapa do Site</h3>
+            <ul class="checklist">
+              <li>👤 História de (intra)empreendedor</li>
+              <li>🤝 Empreendedorismo Social</li>
+              <li>🚀 Startups e cases</li>
+              <li>🌍 Conceitos & Tendências</li>
+              <li>🎬 A a Z (Filme & Livro)</li>
+              <li>📚 Eu Recomendo</li>
+              <li>✨ Conclusão</li>
             </ul>
           </div>
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <!-- Startups -->
-    <section id="startups" class="section">
-      <div class="container">
-        <h2>🚀 Startups</h2>
-        <p>Startups são empresas inovadoras, escaláveis e de crescimento acelerado, criadas para resolver problemas específicos de forma disruptiva.</p>
+      <!-- História -->
+      <section id="historia" class="section">
+        <div class="container">
+          <h2>👤 História de um Empreendedor ou Intraempreendedor</h2>
+          <p>
+            O <strong>intraempreendedorismo</strong> é a capacidade de inovar
+            dentro de uma organização já existente. Em vez de abrir seu próprio
+            negócio, o intraempreendedor transforma processos, cria novos
+            produtos e revoluciona mercados de dentro para fora. No Brasil, esse
+            movimento tem crescido, principalmente em grandes empresas que
+            incentivam times a pensarem como startups.
+          </p>
 
-        <div class="cards grid-3">
           <article class="card">
-            <h3>Nubank</h3>
-            <p>Revolucionou o setor bancário com serviços digitais e experiência centrada no usuário.</p>
-          </article>
-          <article class="card">
-            <h3>iFood</h3>
-            <p>Transformou a forma de pedir comida, abrindo oportunidades e gerando renda.</p>
-          </article>
-          <article class="card">
-            <h3>Gympass</h3>
-            <p>Acesso flexível a academias e atividades físicas em rede global.</p>
+            <header class="card-head">
+              <div class="avatar">LT</div>
+              <div>
+                <h3>Exemplo: Luiza Trajano – Magazine Luiza</h3>
+                <p class="muted">Transformação digital e visão de futuro</p>
+              </div>
+            </header>
+            <div class="card-body grid-2">
+              <ul class="bullets">
+                <li>
+                  <strong>Desafios:</strong> enfrentar a concorrência de grandes
+                  players globais e transformar uma rede de lojas físicas em
+                  potência digital.
+                </li>
+                <li>
+                  <strong>Regras quebradas:</strong> apostar na digitalização
+                  quando poucos acreditavam no varejo online.
+                </li>
+                <li>
+                  <strong>Mercado identificado:</strong> consumidores em cidades
+                  médias e pequenas com pouco acesso ao e-commerce.
+                </li>
+                <li>
+                  <strong>Proposta de valor:</strong> democratizar o acesso ao
+                  varejo digital.
+                </li>
+                <li>
+                  <strong>Legado:</strong> o Magalu tornou-se referência em
+                  transformação digital no Brasil.
+                </li>
+              </ul>
+              <div class="note">
+                <p>
+                  <strong>Insight:</strong> intraempreender é combinar cultura
+                  de inovação, tecnologia e foco no cliente — mesmo dentro de
+                  estruturas complexas.
+                </p>
+              </div>
+            </div>
           </article>
         </div>
+      </section>
 
-        <div class="cards grid-2">
-          <article class="card">
-            <h4>Startups sociais</h4>
-            <ul class="bullets">
-              <li><strong>Miaw:</strong> conecta ONGs de adoção de animais a interessados.</li>
-              <li><strong>Geekie:</strong> soluções educacionais digitais para escolas públicas.</li>
-            </ul>
-          </article>
-          <article class="card note">
-            <p><strong>Dica:</strong> comece pequeno, valide rápido e aprenda sempre com o usuário.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <!-- Empreendedorismo Social -->
+      <section id="social" class="section alt">
+        <div class="container">
+          <h2>🤝 Empreendedorismo Social</h2>
+          <p>
+            O empreendedorismo social une lucro e impacto positivo. É quando o
+            foco não é apenas financeiro, mas também resolver problemas da
+            sociedade.
+          </p>
 
-    <!-- Conceitos & Tendências -->
-    <section id="conceitos" class="section alt">
-      <div class="container">
-        <h2>🌍 Conceitos & Tendências</h2>
-        <div class="timeline">
-          <div class="t-item">
-            <h3>1. Inteligência Artificial</h3>
-            <p>Ferramenta que aprende padrões e ajuda empresas a tomarem decisões rápidas, personalizar produtos e otimizar custos. <em>Exemplo:</em> IA no setor de saúde para diagnósticos precoces.</p>
-          </div>
-          <div class="t-item">
-            <h3>2. Economia Criativa</h3>
-            <p>Arte, cultura, design, música e audiovisual como motores de inovação. <em>Exemplo:</em> plataformas digitais transformaram como consumimos música e filmes.</p>
-          </div>
-          <div class="t-item">
-            <h3>3. Design Thinking</h3>
-            <p>Metodologia centrada no usuário com empatia, prototipagem e testes rápidos. <em>Exemplo:</em> apps mais intuitivos a partir de pesquisa com usuários.</p>
-          </div>
-          <div class="t-item">
-            <h3>4. ESG – Negócios Sustentáveis</h3>
-            <p>Impacto ambiental, social e governança responsável. <em>Exemplo:</em> empresas brasileiras referência em sustentabilidade.</p>
-          </div>
-          <div class="t-item">
-            <h3>5. Economia Compartilhada</h3>
-            <p>Pessoas compartilham bens e serviços em vez de comprar. <em>Exemplo:</em> plataformas de hospedagem e mobilidade.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="cards grid-2">
+            <article class="card">
+              <h3>Gerando Falcões (Edu Lyra)</h3>
+              <p>
+                Atua em comunidades com educação, cultura e inclusão produtiva,
+                acelerando a mobilidade social.
+              </p>
+            </article>
 
-    <!-- A a Z -->
-    <section id="az" class="section">
-      <div class="container">
-        <h2>🎬 Empreendedorismo de A a Z</h2>
-        <div class="cards grid-2">
-          <article class="card">
-            <h3>Filme: <em>Fome de Poder</em></h3>
-            <p>Mostra a história do McDonald’s e o papel de Ray Kroc na escalabilidade do negócio.</p>
-            <p class="muted"><strong>Aprendizado:</strong> visão estratégica e escalabilidade.</p>
-          </article>
-          <article class="card">
-            <h3>Leitura: <em>Sonho Grande</em></h3>
-            <p>Trajetória de Lemann, Telles e Sicupira e a construção de um império empresarial.</p>
-            <p class="muted"><strong>Aprendizado:</strong> disciplina, meritocracia e ousadia.</p>
+            <article class="card">
+              <h3>Banco Pérola</h3>
+              <p>
+                Oferece microcrédito para jovens empreendedores de baixa renda,
+                fomentando negócios locais.
+              </p>
+            </article>
+          </div>
+
+          <article class="card focus">
+            <header class="card-head">
+              <div class="avatar">TB</div>
+              <div>
+                <h3>Startup escolhida: TETO Brasil</h3>
+                <p class="muted">Moradia digna em comunidades vulneráveis</p>
+              </div>
+            </header>
+            <div class="card-body">
+              <ul class="bullets">
+                <li><strong>Problema:</strong> falta de moradia digna.</li>
+                <li>
+                  <strong>Impacto:</strong> milhares de casas emergenciais
+                  construídas com voluntários e moradores.
+                </li>
+                <li>
+                  <strong>Por que o chapéu sai:</strong> conecta juventude,
+                  cidadania e transformação social de forma prática e
+                  mensurável.
+                </li>
+              </ul>
+            </div>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Eu Recomendo -->
-    <section id="recomendo" class="section alt">
-      <div class="container">
-        <h2>📚 Eu Recomendo</h2>
-        <ul class="resource-list">
-          <li><strong>Blog Startupi</strong> — atualizações sobre startups e inovação no Brasil.</li>
-          <li><strong>Canal G4 Educação (YouTube)</strong> — conteúdo prático de negócios.</li>
-          <li><strong>Livro “O Dilema da Inovação” (Clayton Christensen)</strong> — por que grandes empresas falham ao não se reinventarem.</li>
-        </ul>
-        <div class="tip card">
-          <p><strong>Tip:</strong> crie um hábito de curadoria semanal — salve artigos, anote ideias e compartilhe aprendizados.</p>
+      <!-- Startups -->
+      <section id="startups" class="section">
+        <div class="container">
+          <h2>🚀 Startups</h2>
+          <p>
+            Startups são empresas inovadoras, escaláveis e de crescimento
+            acelerado, criadas para resolver problemas específicos de forma
+            disruptiva.
+          </p>
+
+          <div class="cards grid-3">
+            <article class="card">
+              <h3>Nubank</h3>
+              <p>
+                Revolucionou o setor bancário com serviços digitais e
+                experiência centrada no usuário.
+              </p>
+            </article>
+            <article class="card">
+              <h3>iFood</h3>
+              <p>
+                Transformou a forma de pedir comida, abrindo oportunidades e
+                gerando renda.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Gympass</h3>
+              <p>
+                Acesso flexível a academias e atividades físicas em rede global.
+              </p>
+            </article>
+          </div>
+
+          <div class="cards grid-2">
+            <article class="card">
+              <h4>Startups sociais</h4>
+              <ul class="bullets">
+                <li>
+                  <strong>Miaw:</strong> conecta ONGs de adoção de animais a
+                  interessados.
+                </li>
+                <li>
+                  <strong>Geekie:</strong> soluções educacionais digitais para
+                  escolas públicas.
+                </li>
+              </ul>
+            </article>
+            <article class="card note">
+              <p>
+                <strong>Dica:</strong> comece pequeno, valide rápido e aprenda
+                sempre com o usuário.
+              </p>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Conclusão -->
-    <section id="conclusao" class="section">
-      <div class="container">
-        <h2>✨ Conclusão / Reflexão Final</h2>
-        <p>
-          Construir este portfólio mostrou que empreender é muito mais do que abrir uma empresa: é sobre coragem, resiliência e impacto. Vivemos em um país cheio de desafios, mas também repleto de oportunidades. Cabe aos empreendedores — sociais, digitais ou intraempreendedores — enxergar soluções onde muitos só veem problemas.
-        </p>
-        <blockquote class="impacto">“O futuro pertence a quem ousa inovar.”</blockquote>
-        <a class="btn primary" href="#inicio" aria-label="Voltar ao topo">Voltar ao topo</a>
-      </div>
-    </section>
-  </main>
+      <!-- Conceitos & Tendências -->
+      <section id="conceitos" class="section alt">
+        <div class="container">
+          <h2>🌍 Conceitos & Tendências</h2>
+          <div class="timeline">
+            <div class="t-item">
+              <h3>1. Inteligência Artificial</h3>
+              <p>
+                Ferramenta que aprende padrões e ajuda empresas a tomarem
+                decisões rápidas, personalizar produtos e otimizar custos.
+                <em>Exemplo:</em> IA no setor de saúde para diagnósticos
+                precoces.
+              </p>
+            </div>
+            <div class="t-item">
+              <h3>2. Economia Criativa</h3>
+              <p>
+                Arte, cultura, design, música e audiovisual como motores de
+                inovação. <em>Exemplo:</em> plataformas digitais transformaram
+                como consumimos música e filmes.
+              </p>
+            </div>
+            <div class="t-item">
+              <h3>3. Design Thinking</h3>
+              <p>
+                Metodologia centrada no usuário com empatia, prototipagem e
+                testes rápidos. <em>Exemplo:</em> apps mais intuitivos a partir
+                de pesquisa com usuários.
+              </p>
+            </div>
+            <div class="t-item">
+              <h3>4. ESG – Negócios Sustentáveis</h3>
+              <p>
+                Impacto ambiental, social e governança responsável.
+                <em>Exemplo:</em> empresas brasileiras referência em
+                sustentabilidade.
+              </p>
+            </div>
+            <div class="t-item">
+              <h3>5. Economia Compartilhada</h3>
+              <p>
+                Pessoas compartilham bens e serviços em vez de comprar.
+                <em>Exemplo:</em> plataformas de hospedagem e mobilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <footer class="site-footer">
+      <!-- A a Z -->
+      <section id="az" class="section">
+        <div class="container">
+          <h2>🎬 Empreendedorismo de A a Z</h2>
+          <div class="cards grid-2">
+            <article class="card">
+              <h3>Filme: <em>Fome de Poder</em></h3>
+              <p>
+                Mostra a história do McDonald’s e o papel de Ray Kroc na
+                escalabilidade do negócio.
+              </p>
+              <p class="muted">
+                <strong>Aprendizado:</strong> visão estratégica e
+                escalabilidade.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Leitura: <em>Sonho Grande</em></h3>
+              <p>
+                Trajetória de Lemann, Telles e Sicupira e a construção de um
+                império empresarial.
+              </p>
+              <p class="muted">
+                <strong>Aprendizado:</strong> disciplina, meritocracia e
+                ousadia.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Eu Recomendo -->
+      <section id="recomendo" class="section alt">
+        <div class="container">
+          <h2>📚 Eu Recomendo</h2>
+          <ul class="resource-list">
+            <li>
+              <strong>Blog Startupi</strong> — atualizações sobre startups e
+              inovação no Brasil.
+            </li>
+            <li>
+              <strong>Canal G4 Educação (YouTube)</strong> — conteúdo prático de
+              negócios.
+            </li>
+            <li>
+              <strong
+                >Livro “O Dilema da Inovação” (Clayton Christensen)</strong
+              >
+              — por que grandes empresas falham ao não se reinventarem.
+            </li>
+          </ul>
+          <div class="tip card">
+            <p>
+              <strong>Tip:</strong> crie um hábito de curadoria semanal — salve
+              artigos, anote ideias e compartilhe aprendizados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusão -->
+      <section id="conclusao" class="section">
+        <div class="container">
+          <h2>✨ Conclusão / Reflexão Final</h2>
+          <p>
+            Construir este portfólio mostrou que empreender é muito mais do que
+            abrir uma empresa: é sobre coragem, resiliência e impacto. Vivemos
+            em um país cheio de desafios, mas também repleto de oportunidades.
+            Cabe aos empreendedores — sociais, digitais ou intraempreendedores —
+            enxergar soluções onde muitos só veem problemas.
+          </p>
+          <blockquote class="impacto">
+            “O futuro pertence a quem ousa inovar.”
+          </blockquote>
+          <a class="btn primary" href="#inicio" aria-label="Voltar ao topo"
+            >Voltar ao topo</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- <footer class="site-footer">
     <div class="container">
       <p>Feito com ❤ para estudos de empreendedorismo • <span id="year"></span></p>
     </div>
-  </footer>
+  </footer> -->
 
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
